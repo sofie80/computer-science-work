@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Currency Converter</title>
+			<link rel="stylesheet" href="/styles.css">
+	</head>
+	<body>
+			<div class="container">
+				<div class="card">
+					<h1>Currency Converter</h1>
+					<p class="lead">Quickly convert between common currencies using ExchangeRate API (or a local mock).</p>
+
+					<form id="converter" onsubmit="event.preventDefault(); convertCurrency();">
+						<label>
+							Amount
+							<input id="amount" type="number" step="any" value="1" required />
+						</label>
+
+						<div class="controls">
+							<div class="field">
+								<label>From
+									<select id="fromCurrency">
+										<option>USD</option>
+										<option>EUR</option>
+										<option>GBP</option>
+										<option>JPY</option>
+									</select>
+								</label>
+							</div>
+
+							<div class="field">
+								<label>To
+									<select id="toCurrency">
+										<option>EUR</option>
+										<option>USD</option>
+										<option>GBP</option>
+										<option>JPY</option>
+									</select>
+								</label>
+							</div>
+						</div>
+
+						<button type="submit">Convert</button>
+					</form>
+
+					<div id="result">Enter values and click Convert</div>
+				</div>
+			</div>
+
+		<!-- load config first, then api helper, then app logic -->
+		<script src="/config.js"></script>
+		<script src="/currency-api.js"></script>
+		<script src="/app.js"></script>
+	</body>
+</html>
